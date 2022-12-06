@@ -11,7 +11,7 @@ int main(){
         scanf("%f", &time);
 	printf("Enter times of compounding : ");
         scanf("%f", &number_Times);
-	compound_interest =principal*pow((1+rate/number_Times*100), number_Times*time);
-	printf("CI = %.2f \n", compound_interest);
+	compound_interest =principal*pow((1+rate*0.01/number_Times), number_Times*time);
+	printf("Final amount after Compound Interest = %.2f \n", compound_interest);
 	return 0;
 }
