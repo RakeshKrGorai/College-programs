@@ -6,7 +6,7 @@ int main(){
         scanf("%f", &principal);
         printf("Enter rate : ");
         scanf("%f", &rate);
-        printf("Enter time : ");
+        printf("Enter time (in years) : ");
 	scanf("%f", &time);
 	simple_interest = (principal*rate*time)/100;
 	printf("The calculated simple interest for the given stats is %.2f \n", simple_interest);
