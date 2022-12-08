@@ -2,7 +2,7 @@
 #include<stdio.h>
 #include<math.h>
 int main(){
-	float principal, rate, time, number_Times, compound_interest;
+	float principal, rate, time, numberTimes, compound_interest;
 	printf("Enter principal : ");
 	scanf("%f", &principal);
 	printf("Enter rate : ");
