@@ -3,13 +3,13 @@
 #include<math.h>
 int main(){
 	float u, t, a, S;
-	printf("Enter Initial Velocity(u) : ");
-        scanf("%f", &u);
-	printf("Enter time(t) : ");
-        scanf("%f", &t);
-	printf("Enter acceleration : ");
-        scanf("%f", &a);
+	printf("Enter value of u : ");
+    scanf("%f", &u);
+	printf("Enter value of t : ");
+    scanf("%f", &t);
+	printf("Enter value of a : ");
+    scanf("%f", &a);
 	S= u*t + (1.0/2)*a*pow(t,2);
-	printf("The value of Displacement(S) is %.2f \n", S);
+	printf("The value of S as per the equation is %.2f \n", S);
 	return 0;
 }
