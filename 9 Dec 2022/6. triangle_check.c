@@ -1,9 +1,9 @@
 #include<stdio.h>
 int main(){
-	int s1,s2,s3;
+	int side1,side2,side3;
 	printf("Enter 3 sides of  triangle : ");
-	scanf("%d %d %d", &s1, &s2, &s3);
-	if ((s1+s2>s3) && (s2+s3>s1) && (s3+s1>s2)){
+	scanf("%d %d %d", &side1, &side2, &side3);
+	if ((side1+side2>side3) && (side2+side3>side1) && (side3+side1>side2)){
 		printf("Valid triangle");
 	}
 	else{
