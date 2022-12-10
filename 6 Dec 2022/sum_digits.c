@@ -7,8 +7,7 @@ int main()
     scanf("%d", &num);
     int firstDigit = num/1000;
     int lastDigit = num%10;
-    printf("First DIgit : %d \n", firstDigit );
     int sum = firstDigit+lastDigit;
-    printf("The sum is %d", sum);
+    printf("The sum is %d \n", sum);
     return 0;
 }
