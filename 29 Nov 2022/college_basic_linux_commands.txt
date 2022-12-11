@@ -1,0 +1,13 @@
+## --- Linux Commands --- ##
+
+cd <location> - change directory from current directory to the destination directory
+ls - list all the files present in the current directory
+pwd - prints the location of current working directory
+touch<filename> - create a file in the working directory
+cat<filename> - displays content of the file
+cat<[filename] - writes content in the file (erases the previous content written in the file)
+cat<<filename] - appends content in the file (while keeping the old content in the file)
+mkdir<folder_name> - make a directory in the present location
+rmdir<folder_name> - removes an empty directory
+rm<filename> - deletes file with the given name
+rm -r<folder_name> - deletes a directory (even if its not empty)
