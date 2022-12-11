@@ -4,10 +4,10 @@ int main(){
 	printf("Enter 3 sides of  triangle : ");
 	scanf("%d %d %d", &side1, &side2, &side3);
 	if ((side1+side2>side3) && (side2+side3>side1) && (side3+side1>side2)){
-		printf("Valid triangle");
+		printf("It is a valid triangle \n");
 	}
 	else{
-		printf("Invalid triangle");
+		printf("It is an invalid triangle \n");
 	}
 	return 0;
 }
