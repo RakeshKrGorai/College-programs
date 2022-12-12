@@ -1,4 +1,11 @@
-## --- Linux Commands --- ##
+## --- Linux --- ###
+
+It is an open source operating system used globally.
+It is a multi user operating system.
+Ubuntu Command Line Interface(CLI) shows [username@hostname]$, along with the present working directory in each line of command.
+
+
+## --- Basic Linux Commands --- ##
 
 cd <location> - change directory from current directory to the destination directory
 ls - list all the files present in the current directory
