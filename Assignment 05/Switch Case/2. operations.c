@@ -7,7 +7,7 @@ int main()
     printf("Enter two numbers : ");
     scanf("%d %d", &operand1, &operand2);
     printf("Enter operator to be used for the provided operands\n+ for addition \n- for subraction \n* for multiplication \n/ for division \nEnter choice : ");
-    scanf("%s", &operator);
+    scanf(" %c", &operator);
     switch (operator)
     {
     case '+':
@@ -20,7 +20,8 @@ int main()
         printf("Product is %d", operand1*operand2);
         break;
     case '/':
-        printf("Quotient is %d", operand1/operand2);
+        printf("Quotient is %.2f", (float)operand1/operand2);
+        break;
     default:
         break;
     }
