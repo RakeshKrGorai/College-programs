@@ -10,17 +10,17 @@ int main(){
 	if (side1+side2>side3 && side2+side3>side1 && side3+side1>side2){
 		printf("It is a valid triangle \n");
 		if (side1==side2 && side2==side3){
-			printf("It is an equilateral triangle");
+			printf("It is an equilateral triangle \n");
 		}
 		else if(side1==side2||side2==side3||side3==side1){
 			printf("It is an isosceles triangle \n");
 		}
-		else if (sq1+sq2==sq3 || sq2+sq3==sq3 || sq3+sq1==sq2)
+		else if (sq1+sq2==sq3 || sq2+sq3==sq1 || sq3+sq1==sq2)
 		{
-			printf("It is a right angled triangle");
+			printf("It is a right angled triangle \n");
 		}
 		else{
-			printf("It is a scalene triangle");
+			printf("It is a scalene triangle \n");
 		}
 	}
 	else{

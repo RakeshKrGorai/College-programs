@@ -2,7 +2,7 @@
 #include<stdio.h>
 int main(){
 	int number;
-	printf("Enter any three number to check : ");
+	printf("Enter any three digit number to check : ");
 	scanf("%d", &number);
 	int firstDigit = number/100;
 	int lastDigit = number%10;
