@@ -20,6 +20,7 @@ int main()
     }
     if(a==0){
         root1= -c/b;
+	printf("Root of the equation is %.2f \n", root1);
     }
     return 0;
 }
