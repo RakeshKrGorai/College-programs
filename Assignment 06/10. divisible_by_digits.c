@@ -5,8 +5,7 @@ int main()
     int sum, num;
     for(int i=1; i<=10000;i++){
         int copy=i;
-        while (copy)
-        {
+        while (copy){
             sum+=copy%10;
             copy=copy/10;
         }
@@ -14,7 +13,6 @@ int main()
             printf("%d \n", i);
         }
         sum=0;
-        
     }
     return 0;
 }
