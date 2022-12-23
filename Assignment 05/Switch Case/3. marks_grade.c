@@ -13,12 +13,26 @@ int main()
     {
         grade='E';
     }
-    else if(marks>=81 && marks<=89)
+    else if(marks>=71 && marks<=79)
     {
         grade='A';
     }
-    
-    
-
+    else if(marks>=61 && marks<=69)
+    {
+        grade='B';
+    }
+    else if(marks>=51 && marks<=59)
+    {
+        grade='C';
+    }
+    else if(marks>=41 && marks<=49)
+    {
+        grade='D';
+    }
+    else{
+        grade='F';
+    }
+    printf("Grade : %c \n", grade);
     return 0;
 }
+
