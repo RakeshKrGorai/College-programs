@@ -2,11 +2,11 @@
 #include<stdio.h>
 int main()
 {
-    int marks;
+    int n;
     char grade;
     printf("Enter marks scored : ");
-    scanf("%d", &marks);
-    switch(marks/10){
+    scanf("%d", &n);
+    switch(n/10){
         case 10:
             grade='O';
             break;
