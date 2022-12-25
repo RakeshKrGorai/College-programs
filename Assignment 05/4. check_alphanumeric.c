@@ -7,16 +7,16 @@ int main()
     scanf("%s", &character);
     int ascii = (int)character;
     if(ascii>=65 && ascii<=90){
-        printf("Upper case character");
+        printf("Upper case character \n");
     }
     else if (ascii>=97 && ascii<=128){
-        printf("Lower case character");
+        printf("Lower case character \n");
     }
     else if (ascii>=48 && ascii<=57){
-        printf("Digit");
+        printf("Digit \n");
     }
     else{
-        printf("Special Character");
+        printf("Special Character \n");
     }
     return 0;
 }
