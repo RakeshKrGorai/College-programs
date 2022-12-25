@@ -1,3 +1,4 @@
+//Wrong Code, Don't Copy
 //WAP to print grade of student in math
 #include<stdio.h>
 int main()
