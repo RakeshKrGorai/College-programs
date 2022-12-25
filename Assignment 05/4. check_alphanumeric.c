@@ -4,7 +4,7 @@ int main()
 {
     char character;
     printf("Enter a character : ");
-    scanf("%s", &character);
+    scanf("%c", &character);
     int ascii = (int)character;
     if(ascii>=65 && ascii<=90){
         printf("Upper case character \n");
