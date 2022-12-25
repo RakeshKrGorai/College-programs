@@ -4,7 +4,7 @@ int main()
 {
     char alphabet;
     printf("Enter an alphabet : ");
-    scanf("%s", &alphabet);
+    scanf("%c", &alphabet);
     switch (alphabet)
     {
     case 'a' :
