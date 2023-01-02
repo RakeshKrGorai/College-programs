@@ -1,3 +1,4 @@
+//WAP to print numbers between 10 to 10000 where the digits of a number are equal(eg 11, 22,33 etc....)
 #include<stdio.h>
 int main(){
     int i=10, digit, currentDigit, counter=0;
