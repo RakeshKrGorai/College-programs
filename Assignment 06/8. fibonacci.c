@@ -13,5 +13,5 @@ int main(){
 		printf(" %d", a);
 		counter++;
 	}
-	
+	return 0;
 }
