@@ -2,7 +2,7 @@
 int main()
 {
     int ch=1, i, j, k, a;
-    for(i=1;i<=5;i++){
+    for(i=1;i<=4;i++){
         for(j=5;j>=i;j--){
             printf(" ");
         }
