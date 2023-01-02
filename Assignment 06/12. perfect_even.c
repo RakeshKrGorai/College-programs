@@ -1,6 +1,5 @@
 //WAP to find out perfect squares which are even numbers within 1-10000
 #include<stdio.h>
-#include<math.h>
 int main(){
 	float root;
 	for(int i=2;i<=10000;i+=2){
