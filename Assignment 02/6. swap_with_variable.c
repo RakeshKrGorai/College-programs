@@ -1,6 +1,6 @@
 //WAP to swap the values using 3rd variable
 #include<stdio.h>
-int main(int argc, char const *argv[])
+int main()
 {
     int num1, num2, variable;
     printf("Enter any two numbers : ");

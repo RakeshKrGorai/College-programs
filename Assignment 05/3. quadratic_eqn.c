@@ -3,7 +3,7 @@
 #include<math.h>
 int main()
 {
-    int a, b, c, x;
+    int a, b, c;
     float root1, root2;
     printf("Enter values of a, b, c : ");
     scanf("%d %d %d", &a, &b, &c);
