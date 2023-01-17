@@ -13,8 +13,8 @@ int main(){
 		}
 	}
 	//Printing Array
-	for(i=0;i<rows;i++){
-                for(j=0;j<column;j++){
+	for(i=0;i<3;i++){
+                for(j=0;j<3;j++){
                         printf("%d ", arr[i][j]);
                 }
 		printf("\n");
