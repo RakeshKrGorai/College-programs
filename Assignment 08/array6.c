@@ -3,7 +3,7 @@ int main(){
 	int pos, i;
 	int a[]={1,2,3,4,5};
 	int n= sizeof(a)/sizeof(a[0]);
-	printf("Enter position to delete : ");
+	printf("Enter position to delete (0-4) : ");
 	scanf("%d", &pos);
 	if(n<pos){
 	    printf("Err... position  value is greater than length of array");
