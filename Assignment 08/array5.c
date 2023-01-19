@@ -1,4 +1,3 @@
-//Completed, but working only without \n, with \n code fucks, will be updating asap
 //Find Odd, Eve, +ve and -ve numbers in an Array
 #include<stdio.h>
 int main()
