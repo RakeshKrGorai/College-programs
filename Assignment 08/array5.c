@@ -7,18 +7,18 @@ int main()
     for(i;i<len;i++){
         if (arr[i]>0){
             if(arr[i]%2==0){
-                printf("Even & Positive Number : %d", arr[i]);
+                printf("Even & Positive Number : %d \n", arr[i]);
             }
             else{
-                printf("Odd & Positive Number : %d", arr[i]);
+                printf("Odd & Positive Number : %d \n", arr[i]);
             }
         }
         else{
             if(arr[i]%2==0){
-                printf("Even & Positive Number : %d", arr[i]);
+                printf("Even & Negative Number : %d \n", arr[i]);
             }
             else{
-                printf("Odd & Positive Number : %d", arr[i]);
+                printf("Odd & Negative Number : %d \n", arr[i]);
             }
         }
     }
