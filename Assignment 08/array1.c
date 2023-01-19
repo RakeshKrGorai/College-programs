@@ -6,7 +6,7 @@ int main(){
 	scanf("%d", &val);
 	printf("Enter position (1-10) : ");
 	scanf("%d", &pos);
-	arr[pos+1]=val;
+	arr[pos-1]=val;
 	printf("%d has been placed at %d position \n", val, pos);
 	printf("Updated Array :");
 	for(i=0;i<10;i++){
