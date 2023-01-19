@@ -4,9 +4,9 @@ int main(){
 	int pos,val;
 	printf("Enter value to be inserted : ");
 	scanf("%d", &val);
-	printf("Enter position (0-10) : ");
+	printf("Enter position (1-10) : ");
 	scanf("%d", &pos);
-	arr[pos]=val;
+	arr[pos+1]=val;
 	printf("%d has been placed at %d position \n", val, pos);
 	printf("Updated Array :");
 	for(i=0;i<10;i++){
