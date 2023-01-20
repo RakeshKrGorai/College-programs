@@ -5,7 +5,7 @@ int main(){
 	printf("Enter no of rows : ");
 	scanf("%d", &rows);
 	printf("Enter no of columns : ");
-        scanf("%d", &column);
+    scanf("%d", &column);
 	int arr[rows][column];
 	for(i=0;i<rows;i++){
 		for(j=0;j<column;j++){
@@ -25,4 +25,3 @@ int main(){
 	}
 	return 0;
 }
-	
