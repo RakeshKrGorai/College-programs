@@ -5,7 +5,7 @@ int main()
     printf("Enter a number to search : ");
     scanf("%d", &num);
     while(low<=high){
-        mid=low+(high-low)/2;
+        mid=(high+low)/2;
         if(arr[mid]==num){
             printf("Found at %d position", mid);
             break;
