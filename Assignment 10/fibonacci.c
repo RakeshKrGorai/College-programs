@@ -1,4 +1,5 @@
 //WAP to print fibonacci
+//Done using recursive function
 #include<stdio.h>
 
 int printFibonacci(int n);
