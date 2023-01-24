@@ -1,4 +1,5 @@
 //WAP to print factorial of a number
+//Incomplete
 #include<stdio.h>
 int factorial(int num, int fact);
 
