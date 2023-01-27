@@ -23,7 +23,7 @@ float equation(int n){
         float result=1.0;
         int i;
         for(i=1;i<n;i++){
-                result+=(float)(1.0/factorial(i+1));
+                result+=(1.0/factorial(i+1));
         }
         //return result;
         printf("Result : %f \n", result);
