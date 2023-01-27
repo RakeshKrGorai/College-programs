@@ -26,6 +26,6 @@ float equation(int n){
                 result+=(1.0/factorial(i+1));
         }
         //return result;
-        printf("Result : %f \n", result);
+        printf("Result : %.2f \n", result);
 }
 
