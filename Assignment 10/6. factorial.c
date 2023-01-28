@@ -12,7 +12,7 @@ int main()
 }
 int factorial(int num){
     if(num!=1){
-        int i=1, fact;
+        int i=1, fact=1;
         for(i;i<=num;i++){
             fact*=i;
         }
