@@ -2,21 +2,23 @@
 float equation(int n);
 int factorial(int i);
 int main(){
-        int n;
+        int n, fact;
         printf("Enter value of n : ");
         scanf("%d", &n);
         equation(n);
         return 0;
 }
-
-int factorial(int i){
-        if(i==1){
-            
-            return 1;
+int factorial(int num){
+    if(num!=1){
+        int i=1, fact=1;
+        for(i;i<=num;i++){
+            fact*=i;
         }
-        else{
-            return i*factorial(i-1);
-        }
+        return fact;
+    }
+    else{
+        return 1;
+    }
 }
 
 float equation(int n){
