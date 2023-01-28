@@ -1,30 +1,19 @@
-//WAP to print fibonacci
-//Done using recursive function
 #include<stdio.h>
-
-int printFibonacci(int n);
-int first=1, second=0, sum=0, i=0, n;
-
+int fibonacci(int n);
 int main()
 {
-    //Write a program in C to print the Fibonacci series using recursion.
-    printf("Enter no of elements : ");
+    int n;
+    printf("Enter value of n : ");
     scanf("%d", &n);
-    printf("%d ", first);
-    printFibonacci(n);
-    printf("\n");
+    fibonacci(n);
     return 0;
 }
-
-int printFibonacci(int n)
-{
-    if (i<=n)
-    {
-        sum = first + second;
-        printf("%d ", sum);
-        second = first;
-        first = sum;
-        i++;
-        printFibonacci(n);
+int fibonacci(int n){
+    int a=0, b=1, i, result;
+    for(i=0;i<=n;i++){
+        printf("%d ", a);
+        result=a+b;
+        a=b;
+        b=result;
     }
 }
