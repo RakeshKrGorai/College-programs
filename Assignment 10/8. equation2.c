@@ -10,14 +10,17 @@ int main(){
         return 0;
 }
 
-int factorial(int i){
-        if(i==1){
-            
-            return 1;
+int factorial(int num){
+    if(num!=1){
+        int i=1, fact=1;
+        for(i;i<=num;i++){
+            fact*=i;
         }
-        else{
-            return i*factorial(i-1);
-        }
+        return fact;
+    }
+    else{
+        return 1;
+    }
 }
 
 float equation(int n){
@@ -27,6 +30,6 @@ float equation(int n){
                 result+=(pow(n,(i+1))/factorial(i+1));
         }
         //return result;
-        printf("Result : %f \n", result);
+        printf("Result : %.2f \n", result);
 }
 
