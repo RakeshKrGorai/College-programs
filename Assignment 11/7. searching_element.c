@@ -10,7 +10,7 @@ int main()
     return 0;
 }
 int searchElement(int arr[], int element){
-    int i, cnt;
+    int i, cnt=0;
     for(i=0;i<10;i++){
         if(arr[i]==element){
             printf("Element found at %d position", i);
