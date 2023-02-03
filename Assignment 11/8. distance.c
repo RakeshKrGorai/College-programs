@@ -3,6 +3,7 @@
 //Incomplete
 
 #include<stdio.h>
+#include<math.h>
 int distance(int x[], int y[]);
 int main()
 {
@@ -12,6 +13,6 @@ int main()
     return 0;
 }
 int distance(int x[], int y[]){
-    int x_diff, y_diff;
+    int x_diff, y_diff, dist;
 
 }
