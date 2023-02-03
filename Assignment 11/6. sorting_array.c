@@ -22,7 +22,7 @@ int sortArray(int arr[], int len){
             }
         }
     }
-    printf("Sorted Array : ")
+    printf("Sorted Array : ");
     for(i=0;i<len;i++){
         printf("%d ", arr[i]);
     }
