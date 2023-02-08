@@ -12,9 +12,7 @@ char main()
     }
     else{
         cmpstr(str1, str2, len1);
-    }
-
-    
+    }  
 }
 
 char cmpstr(char str1[], char str2[], int len){
