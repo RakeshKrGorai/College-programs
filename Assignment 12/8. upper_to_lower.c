@@ -6,6 +6,7 @@ int main()
     char str[40];
     printf("Enter your string : ");
     scanf("%s", str);
+    //gets(str);            For taking input with spaces(C compiler will give warning it's dangerous lmao)
     converter(str);
     return 0;
 }
