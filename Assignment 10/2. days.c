@@ -5,7 +5,7 @@ int days(int n1, int n2);
 int main(){
 	int year, month;
 	printf("Enter year and month : ");
-    	scanf("%d %d", &year, &month);
+    scanf("%d %d", &year, &month);
 	days(year, month);
 	return 0;
 }
