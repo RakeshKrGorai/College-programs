@@ -7,9 +7,9 @@ int main(){
 	printf("Enter principal : ");
 	scanf("%f", &principal);
 	printf("Enter rate : ");
-    	scanf("%f", &rate);
+    scanf("%f", &rate);
 	printf("Enter time (in years) : ");
-    	scanf("%f", &time);
+    scanf("%f", &time);
 	printf("Enter no. of times interest applied : ");
 	scanf("%f", &numberTimes);
 	compoundInterest(principal, rate, time, numberTimes);

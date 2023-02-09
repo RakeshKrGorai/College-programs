@@ -8,8 +8,8 @@ int main(){
 	return 0;
 }
 int prime(int num){
-	int counter=0;
-	for(int i=2;i<num;i++){
+	int counter=0, i;
+	for(i=2;i<num;i++){
 		if (num%i==0){
 			counter+=1;
 		}
