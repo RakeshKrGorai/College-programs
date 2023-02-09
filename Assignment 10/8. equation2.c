@@ -1,12 +1,12 @@
 #include<stdio.h>
 #include<math.h>
-float equation(int n);
+float equation(int n, int x);
 int factorial(int i);
 int main(){
-        int n;
-        printf("Enter value of n : ");
-        scanf("%d", &n);
-        equation(n);
+        int n, x;
+        printf("Enter value of n & x : ");
+        scanf("%d %d", &n, &x);
+        equation(n, x);
         return 0;
 }
 
@@ -23,11 +23,11 @@ int factorial(int num){
     }
 }
 
-float equation(int n){
+float equation(int n, int x){
         float result=1.0;
         int i;
         for(i=0;i<n;i++){
-                result+=(pow(n,(i+1))/factorial(i+1));
+                result+=(pow(x,(i+1))/factorial(i+1));
         }
         //return result;
         printf("Result : %.2f \n", result);
