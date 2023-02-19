@@ -1,6 +1,6 @@
 //WAP to copy one string to another string using user defined function
-char strcopy(char str1[], char str[]);
 #include<stdio.h>
+char strcopy(char str1[], char str[]);
 int main()
 {
     char str1[20]={0}, str[20]={0};
