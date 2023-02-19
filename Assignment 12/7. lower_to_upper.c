@@ -1,6 +1,6 @@
 //WAP to convert given string into upper case if it's given in lower case
-char converter(char str[]);
 #include<stdio.h>
+char converter(char str[]);
 int main()
 {
     char str[40];
