@@ -15,6 +15,9 @@ int distance(int x[], int y[]){
     float dist;
     x_diff=x[1]-x[0];
     y_diff=y[1]-y[0];
-    dist=sqrt(pow(x_diff, 2))+sqrt(pow(y_diff, 2));
+    x_diff=pow(x_diff, 2);
+    y_diff=pow(y_diff, 2);
+    int sum=x_diff+y_diff;
+    dist=sqrt(sum);
     printf("Distance : %.2f \n", dist);
 }
