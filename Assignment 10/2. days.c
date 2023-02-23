@@ -35,5 +35,3 @@ int days(int year, int month){
 	}
 	printf("Days : %d \n", days);
 }
-
-
