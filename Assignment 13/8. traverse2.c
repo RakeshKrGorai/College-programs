@@ -1,0 +1,1 @@
+//WAP to dynamically accept length of integer array, sort and traverse it using function

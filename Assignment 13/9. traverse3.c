@@ -1,0 +1,1 @@
+//WAP to dynamically accept length of integer array, insert and delete one element in that array using realloc, and traverse it using function
