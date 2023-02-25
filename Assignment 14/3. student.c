@@ -10,7 +10,7 @@ int main()
 {
     student details[10];
     int i;
-    for(i=0;i<10;i++){
+    for(i=0;i<2;i++){
         printf("Enter Name of the student %d: ", i+1);
         scanf("%s", details[i].Name);
         printf("Enter Roll no: ");
@@ -23,7 +23,7 @@ int main()
         scanf("%f", &details[i].mark3);
     }
     printf("\n");
-    for(i=0;i<10;i++){
+    for(i=0;i<2;i++){
         printf("\n-----Student Details-----\n");
         printf("Name : %s \n", details[i].Name);
         printf("Roll no : %d \n", details[i].roll);
