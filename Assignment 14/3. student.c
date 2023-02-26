@@ -43,8 +43,5 @@ int main()
     printf(" \nStudent With Highest Marks in Subject 3 : \n");
     printf("Name : %s \n", details[counter].Name);
     printf("Roll no : %d \n", details[counter].roll);
-    printf("Subject 1 Marks : %.2f \n", details[counter].mark1);
-    printf("Subject 2 Marks : %.2f \n", details[counter].mark2);
-    printf("Subject 3 Marks : %.2f \n", details[counter].mark3);
     return 0;
 }
