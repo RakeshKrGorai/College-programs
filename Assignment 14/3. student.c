@@ -31,14 +31,17 @@ int main()
         printf("Subject 2 Marks : %.2f \n", details[i].mark2);
         printf("Subject 3 Marks : %.2f \n", details[i].mark3);
     }
-    int counter;
+    int counter,j;
     for(i=0;i<9;i++){
-        if(details[i].mark3>details[i+1].mark3){
-            counter = i;
+        for(j=i+1;j<10;j++){
+            if(details[i].mark3>details[j].mark3){
+                counter = i;
+            }
+            else{
+                counter=j;
+            }
         }
-        else{
-            counter=i+1;
-        }
+        
     }
     printf(" \nStudent With Highest Marks in Subject 3 : \n");
     printf("Name : %s \n", details[counter].Name);
