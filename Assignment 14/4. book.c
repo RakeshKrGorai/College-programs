@@ -10,8 +10,8 @@ typedef struct books
 int main(){
     books details[10];
     int i,j, counter;
-    int arr[3]={0,1,2};
-    for(i=0;i<3;i++){
+    int arr[10]={0,1,2,3,4,5,6,7,8,9};
+    for(i=0;i<10;i++){
         printf("---Book %d ---\n",i+1);
         printf("Enter Book no: ");
         scanf("%d", &details[i].bookno);
@@ -23,8 +23,8 @@ int main(){
         scanf("%f", &details[i].price);
     }
     printf("\n");
-    for(i=0;i<3;i++){
-        for(j=i+1;j<3;j++){
+    for(i=0;i<9;i++){
+        for(j=i+1;j<10;j++){
             if(details[i].price>details[j].price){
                 counter=arr[i];
                 arr[i]=arr[j];
@@ -34,9 +34,6 @@ int main(){
                 continue;
             }
         }
-    }
-    for(i=0;i<3;i++){
-        printf("%d ", arr[i]);
     }
     for(i=0;i<3;i++){
         printf("Book no: %d \n", details[(arr[i])].bookno );
