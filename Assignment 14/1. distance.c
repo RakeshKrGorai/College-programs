@@ -7,7 +7,7 @@ typedef struct distance {
 int main()
 {
     distance start, end;
-    int x_diff, y_diff;
+    float x_diff, y_diff;
     printf("Enter x-y coordinates for point 1 : ");
     scanf("%f %f", &start.x, &start.y);
     printf("Enter x-y coordinates for point 2 : ");
