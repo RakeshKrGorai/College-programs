@@ -1,9 +1,8 @@
-//Insert part of code is not quite right, will fix it asap
 //WAP to dynamically accept length of integer array, insert and delete one element in that array using realloc, and traverse it using function
 #include<stdio.h>
 #include<stdlib.h>
 int delete(int n, int num, int *array);
-int insert(int n, int num1, int *array);
+int insert(int n, int num1, int pos, int *array);
 int main()
 {
     int n;
@@ -27,10 +26,10 @@ int main()
     scanf("%d", &num);
     delete(n, num, array);
     //Insert
-    int num1;
-    printf("\nEnter a number to insert in array : ");
-    scanf("%d", &num1);
-    insert(n, num1, array);
+    int num1, pos;
+    printf("\nEnter number and position of the element to be inserted : ");
+    scanf("%d %d", &num1, &pos);
+    insert(n, num1, pos, array);
     return 0;
 }
 
@@ -54,10 +53,13 @@ int delete(int n, int num, int *array){
         }
     }
 }
-int insert(int n, int num1, int *array){
-    int i=0;
+int insert(int n, int num1, int pos, int *array){
+    int i;
     array=realloc(array, sizeof(int)*n);
-    array[n-1]=num1;
+    for(i=n-1;i>=pos-1;i--){
+        *(array+i+1)=*(array+i);
+    }
+    array[pos-1]=num1;
     printf("Element Inserted \nUpdated Array: ");
     for(i=0;i<n;i++){
         printf("%d ",*(array+i));
