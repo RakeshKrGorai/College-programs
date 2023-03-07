@@ -5,7 +5,7 @@ int main(){
 		if(min>arr[i]){
 			min=arr[i];
 		}
-		else if(max<arr[i]){
+		if(max<arr[i]){
 			max=arr[i];
 		}
 		sum+=arr[i];
