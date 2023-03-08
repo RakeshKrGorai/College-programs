@@ -37,4 +37,5 @@ int dynamic(int len){
             printf("%d ",*(array+i));
         }
     }
+    free(array);
 }
