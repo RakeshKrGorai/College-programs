@@ -12,7 +12,7 @@ int main()
     student details[20];
     int i, j, arr[20], temp;
     //Input Data
-    for(i=0;i<5;i++){
+    for(i=0;i<20;i++){
         printf("Enter Roll No. : ");
         scanf("%d", &details[i].roll);
         printf("Enter Name : ");
@@ -23,8 +23,8 @@ int main()
         scanf("%f", &details[i].cgpa);
         arr[i]=i;
     }
-    for (i=0;i<5;i++){
-        for(j=i+1;j<5;j++){
+    for (i=0;i<20;i++){
+        for(j=i+1;j<20;j++){
             if(details[i].cgpa<details[j].cgpa){
                 temp=arr[i];
                 arr[i]=arr[j];
