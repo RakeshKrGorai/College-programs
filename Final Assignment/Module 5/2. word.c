@@ -12,6 +12,6 @@ int main()
         }
     } 
     printf("Number of words present in given file: %d", count);
-    fclose(file);
+    fclose(file); 
     return 0;
 }  
