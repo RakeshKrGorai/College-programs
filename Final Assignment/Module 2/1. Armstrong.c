@@ -1,10 +1,10 @@
 #include<stdio.h>
 int main()
 {
-    int start, end, i, copy, digit;
+    int m, n, i, copy, digit;
     printf("Enter starting and ending range : ");
-    scanf("%d %d", &start, &end);
-    for(i=start;i<=end;i++){
+    scanf("%d %d", &m, &n);
+    for(i=m;i<=n;i++){
         copy=i;
         int sum=0;
         while(copy){
