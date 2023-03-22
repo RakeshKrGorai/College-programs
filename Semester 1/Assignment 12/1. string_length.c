@@ -2,10 +2,8 @@
 #include <stdio.h>
 int main() {
 	char s[] = "Hello World";
-	int i, len=0;
-	for (i = 0; s[i] != '\0'; i++){
-		len++;
-	}
+	int len=0;
+	for (len; s[len] != '\0'; len++);
 	printf("Length of the string: %d \n", len);
 	return 0;
 }
