@@ -4,9 +4,9 @@ int main(){
 	int n, i,j, rem;
 	printf("Enter value of n : ");
 	scanf("%d", &n);
-	while(n){
+	for(i=0;i<=9;i++){
 		int cp=n;
-		int digit = n%10;
+		int digit = i;
 		int freq=0;
 		while(cp){
 			rem=cp%10;
@@ -15,7 +15,10 @@ int main(){
 			}
 			cp/=10;
 		}
-		n/=10;
-		printf("%d occurs %d times\n", digit, freq);
+		if(freq){
+		    printf("%d occurs %d times\n", digit, freq);
+		}
+		
+		
 	}
 }
