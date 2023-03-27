@@ -1,4 +1,5 @@
 //WAP to print armstrong number between 100-10000
+//Incomplete
 #include<stdio.h>
 int main(){
 	int i, j;
