@@ -1,3 +1,4 @@
+//WAP to print reverse of a number
 #include<stdio.h>
 int main(){
 	int n, rev=0, digit=0;
