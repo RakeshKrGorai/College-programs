@@ -1,3 +1,4 @@
+//Implement Linear Search and check whether the element is present or not
 #include<stdio.h>
 int main(){
 	int size, arr[50], element, index, counter=0;
