@@ -1,0 +1,3 @@
+Q1) socket programming for cuncurrent server
+Q2) write a socket program where client submit a text file and server display all the text in reverse order
+Q3) socket program where server can display multiple messages from a single client.
