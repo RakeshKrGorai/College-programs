@@ -1,3 +1,4 @@
+//WAP to delete an element from a given index
 #include<stdio.h>
 int main(){
 	int arr[50], index, size, index1;
