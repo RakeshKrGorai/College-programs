@@ -1,3 +1,4 @@
+//WAp to insert an element ata given index
 #include<stdio.h>
 int main(){
 	int arr[50], index, size, element, index1;
