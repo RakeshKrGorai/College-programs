@@ -1,3 +1,4 @@
+//Incomplete
 #include<stdio.h>
 int delete(int arr[], int len, int element){
 	int i,j,counter=0;
