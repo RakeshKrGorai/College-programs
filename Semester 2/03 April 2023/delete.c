@@ -7,17 +7,19 @@ int delete(int arr[], int len, int element){
 			for(j=i;j<len;j++){
 				arr[j]=arr[j+1];
 			}
-			printf("Element Found, deleting...\n");
+			counter++;
 			len--;
-
+			printf("Element found, deleting....\n");
+			//Printing Updated Array
+			printf("Updated Array : ");
 			for(i=0;i<len;i++){
 				printf("%d ", arr[i]);
 			}
 			printf("\n");
 		}
-		/*else{
-			printf("Element not found\n");
-		}*/
+	}
+	if(counter==0){
+		printf("Element not found\n");
 	}
 }	
 
