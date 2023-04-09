@@ -63,6 +63,7 @@ void main(){
     input(arr,len);
     display(arr,len);
     class_max(arr,len);
+	class_min(arr,len);
     class_sum(arr,len);
     class_avg(arr,len);
 }
