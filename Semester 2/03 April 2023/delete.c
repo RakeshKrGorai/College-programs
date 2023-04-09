@@ -1,4 +1,3 @@
-//Incomplete
 #include<stdio.h>
 int delete(int arr[], int len, int element){
 	int i,j,counter=0;
@@ -22,9 +21,6 @@ int delete(int arr[], int len, int element){
 		printf("Element not found\n");
 	}
 }	
-
-
-
 int main(){
 	int i,arr[100],len, element;
 	printf("Enter length of array : ");
@@ -37,4 +33,3 @@ int main(){
 	scanf("%d", &element);
 	delete(arr, len, element);
 }
-
