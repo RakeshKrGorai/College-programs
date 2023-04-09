@@ -23,7 +23,8 @@ int class_max(int arr[], int len){
 			max=arr[index];
 		}
 	}
-	printf("%d ",max);
+	printf("Maximum Marks : %d ",max);
+	printf("\n");
 }
 
 int class_min(int arr[],int len){
@@ -33,7 +34,8 @@ int class_min(int arr[],int len){
 			min=arr[index];
 		}
 	}
-	printf("%d ",min);
+	printf("Minimum Marks : %d ",min);
+	printf("\n");
 }
 
 int class_sum(int arr[],int len){
@@ -41,7 +43,8 @@ int class_sum(int arr[],int len){
 	for(index=0;index<len;index++){
 		sum+=arr[index];
 	}
-	printf("%d",sum);
+	printf("Sum : %d",sum);
+	printf("\n");
 }
 
 int class_avg(int arr[],int len){
@@ -51,10 +54,15 @@ int class_avg(int arr[],int len){
 		avg+=arr[index];
 	}
 	avg/=(float)len;
-	printf("%.2f",avg);
+	printf("Average : %.2f",avg);
+	printf("\n");
 }
 
 void main(){
     int arr[10],len=10;
     input(arr,len);
+    display(arr,len);
+    class_max(arr,len);
+    class_sum(arr,len);
+    class_avg(arr,len);
 }
