@@ -30,7 +30,7 @@ int class_max(int arr[], int len){
 int class_min(int arr[],int len){
     int index=0,min=arr[0];
 	for(index=0;index<len;index++){
-		if(arr[index]>min){
+		if(arr[index]<min){
 			min=arr[index];
 		}
 	}
