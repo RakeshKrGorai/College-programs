@@ -2,7 +2,7 @@
 #include<stdio.h>
 int insert(int element, int len, int arr[], int position){
 	int i;
-	for(i=len;i>=position;i--){
+	for(i=len;i>=(position-1);i--){
 		arr[i+1]=arr[i];
 	}
 	arr[position-1]=element;
