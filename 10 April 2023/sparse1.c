@@ -1,3 +1,4 @@
+
 #include<stdio.h>
 void readMatrix(int arr[][100],int row,int col){
 	int i,j;
@@ -9,7 +10,7 @@ void readMatrix(int arr[][100],int row,int col){
 	}
 }
 void createSparse(int arr[][100],int row,int col,int triplet[][3]){
-	int i,j,k=0,nzero=0;
+	int i,j,k=1,nzero=0;
 	//Count no of zeroes
 	for(i=0;i<row;i++){
 		for(j=0;j<col;j++){
@@ -18,10 +19,11 @@ void createSparse(int arr[][100],int row,int col,int triplet[][3]){
 			}
 		}
 	}
+	printf("Nzero inside loop : %d\n",nzero);
 	triplet[0][0]=row;
 	triplet[0][1]=col;
 	triplet[0][2]=nzero;
-	for(i=1;i<row;i++){
+	for(i=0;i<row;i++){
 		for(j=0;j<col;j++){
 			if(arr[i][j]){
 				triplet[k][0]=i;
@@ -31,6 +33,7 @@ void createSparse(int arr[][100],int row,int col,int triplet[][3]){
 			}
 		}
 	}
+	
 }
 void displaySparse(int arr[][3]){
 
