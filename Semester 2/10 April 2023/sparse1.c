@@ -1,4 +1,3 @@
-
 #include<stdio.h>
 void readMatrix(int arr[][100],int row,int col){
 	int i,j;
@@ -19,7 +18,6 @@ void createSparse(int arr[][100],int row,int col,int triplet[][3]){
 			}
 		}
 	}
-	printf("Nzero inside loop : %d\n",nzero);
 	triplet[0][0]=row;
 	triplet[0][1]=col;
 	triplet[0][2]=nzero;
