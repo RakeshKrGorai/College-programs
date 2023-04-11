@@ -2,15 +2,12 @@
 #include<stdio.h>
 int sparse(int row_major[100][3], int row){
     int sparse[100][100];
-    int row1,col,i,j,id1,id2;
+    int row1,col,i,j,k=1;
     row1=row_major[0][0];
     col=row_major[0][1];
-    int k=1;
-    for(i=0;i<row;i++){
+    for(i=0;i<row1;i++){
         for(j=0;j<col;j++){
-            id1=row_major[k][0];
-            id2=row_major[k][1];
-            if(i==id1 && j==id2){
+            if(i==row_major[k][0] && j==row_major[k][1]){
                 sparse[i][j]=row_major[k][2];
                 k++;
             }
