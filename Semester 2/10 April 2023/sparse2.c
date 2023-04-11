@@ -1,0 +1,44 @@
+//Row Major Matrix to Sparse Matrix
+#include<stdio.h>
+int sparse(int row_major[100][3], int row){
+    int sparse[100][100];
+    int row1,col,i,j,id1,id2;
+    row1=row_major[0][0];
+    col=row_major[0][1];
+    int k=1;
+    for(i=0;i<row;i++){
+        for(j=0;j<col;j++){
+            id1=row_major[k][0];
+            id2=row_major[k][1];
+            if(i==id1 && j==id2){
+                sparse[i][j]=row_major[k][2];
+                k++;
+            }
+            else{
+                sparse[i][j]=0;
+            }
+        }
+    }
+    //Print
+    for (i=0;i<row1;i++){
+        for(j=0;j<col;j++){
+            printf("%d ",sparse[i][j]);
+        }
+        printf("\n");
+    }
+    
+}
+int main()
+{
+    int i,j,row,col=3,row_major[100][3];
+    printf("Enter no of rows in row major matrix : ");
+    scanf("%d",&row);
+    for(i=0;i<row;i++){
+        printf("Enter %d elements for row %d : ", col,i+1);
+        for(j=0;j<col;j++){
+            scanf("%d", &row_major[i][j]);
+        }
+    }
+    sparse(row_major,row);
+    return 0;
+}
