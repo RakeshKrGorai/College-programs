@@ -25,17 +25,21 @@ int sparse(int row_major[100][3], int row){
     }
     
 }
+int readMatrix(int rowmajor[][3], int row){
+	printf("Enter The Sparse Matrix obtained previouly");
+	for(i=0;i<row;i++){
+		printf("Enter %d elements for row %d : ", col,i
++1);
+		for(j=0;j<col;j++){
+			scanf("%d", &row_major[i][j]);
+		}
+	}
+}
 int main()
 {
     int i,j,row,col=3,row_major[100][3];
-    printf("Enter no of rows in row major matrix : ");
+    printf("Enter no of rows obtained in output matrix above :");
     scanf("%d",&row);
-    for(i=0;i<row;i++){
-        printf("Enter %d elements for row %d : ", col,i+1);
-        for(j=0;j<col;j++){
-            scanf("%d", &row_major[i][j]);
-        }
-    }
+    readMatrix(row_major,row);
     sparse(row_major,row);
-    return 0;
 }
