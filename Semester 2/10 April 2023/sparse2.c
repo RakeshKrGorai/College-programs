@@ -60,6 +60,6 @@ int main()
     readMatrix(row_major,row);
     createSparse(row_major,row,sparse);
     row=row_major[0][0];
-    col=row_major[0][1]
+    col=row_major[0][1];
     check(sparse,original,row,col);
 }
