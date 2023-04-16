@@ -40,6 +40,7 @@ void check(int sparse[][100],int original[][100],int row,int col){
 			if(sparse[i][j] != original[i][j]){
 				c++;
 				printf("Different");
+				
 			}
 			else{
 				continue;
