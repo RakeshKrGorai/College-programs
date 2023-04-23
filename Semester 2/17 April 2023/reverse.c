@@ -24,7 +24,8 @@ char pop(char stack[]){
 }
 
 int main(){
-	char stack[size],element[size],i;
+	char stack[size],element[size];
+	int i;
 	printf("Enter string : ");
 	scanf("%s",element);
 	for(i=0;element[i]!='\0';i++){
