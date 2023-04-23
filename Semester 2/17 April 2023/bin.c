@@ -11,21 +11,16 @@ int push(int stack[],int digit){
 	}
 }
 
-int display(int stack[30]){
-	if(top==-1){
+int pop(int stack[]){
+	if(top == -1){
 		printf("Stack Underflow");
 	}
 	else{
-		int temp;
-		temp=top;
-		printf("Binary Equivalent : ");
-		while(temp>=0){
-			printf("%d ",stack[temp--]);
+		while(top>=0){
+			printf("%d ",stack[top--]);
 		}
-		printf("\n");
 	}
 }
-
 int main(){
 	int n,digit,stack[size];
 	printf("Enter a number : ");
@@ -35,5 +30,7 @@ int main(){
 		push(stack,digit);
 		n/=2;
 	}
-	display(stack);
+	printf("Binary Equivalent : ");
+	
+	pop(stack);
 }
