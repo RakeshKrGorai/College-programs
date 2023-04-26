@@ -1,3 +1,4 @@
+//https://codeforces.com/problemset/problem/376/A
 #include<stdio.h>
 int main(){
 	char s[1000000];
