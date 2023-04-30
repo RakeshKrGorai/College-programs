@@ -1,6 +1,5 @@
 // C Program to convert infix to postfix
 #include <stdio.h>
-
 // Defining stack stuff globally
 #define size 100
 int top1 = -1, top2 = -1;
@@ -19,15 +18,11 @@ int operator(char op)
 		return 2;
 	case '^':
 		return 3;
+	case '(':
+		return 4;
 	default:
 		return -1;
 	}
-}
-
-// A function to return last operator inserted, to check the precedence condition
-char precedence()
-{
-	return stack[top1];
 }
 
 // Pop Function
@@ -54,7 +49,7 @@ void push(char ch)
 		}
 		else
 		{
-			while (operator(ch) <= operator(precedence()))
+			while (operator(ch) <= operator(stack[top1]))
 			{
 				postfix[++top2] = pop();
 			}
@@ -69,7 +64,7 @@ void push(char ch)
 		}
 		else
 		{
-			postfix[++top2];
+			postfix[++top2] = ch;
 		}
 	}
 }
@@ -84,7 +79,7 @@ int main()
 	{
 		if (str[i] == ')')
 		{
-			while (precedence() != '(')
+			while (stack[top1] != '(')
 			{
 				postfix[++top2] = pop();
 			}
