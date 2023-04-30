@@ -1,68 +1,114 @@
-//Write a menu driven program to implement circular queue using array. It should have same ops as in Q1
-#include<stdio.h>
+// Write a menu driven program to implement circular queue using array. It should have same ops as in Q1
+#include <stdio.h>
+#include <stdbool.h>
 #define size 10
-int front=-1, rear=-1, queue[size];
-void insert(int element){
-	if((rear==size-1 && front ==0) || (front ==rear+1)){
+int front = -1, rear = -1, queue[size];
+void insert(int element)
+{
+	if ((rear == size - 1 && front == 0) || (front == rear + 1))
+	{
 		printf("Queue Overflow");
 	}
-	else{
-		if(rear==-1){
+	else
+	{
+		if (rear == -1)
+		{
 			front++;
 			rear++;
 		}
-		else if(rear==size-1){
-			rear=0;
+		else if (rear == size - 1)
+		{
+			rear = 0;
 		}
-		else{
+		else
+		{
 			rear++;
 		}
-		queue[rear]=element;
+		queue[rear] = element;
 	}
 }
 
-int delete(){
-	if(front==-1){
+int delete()
+{
+	if (front == -1)
+	{
 		printf("Queue Underflow");
 	}
-	else{
-		printf("Deleted Value : %d",queue[front]);
-		if(front==size-1){
-			front=0;
+	else
+	{
+		printf("Deleted Value : %d", queue[front]);
+		if (front == size - 1)
+		{
+			front = 0;
 		}
-		else if(front==rear){
+		else if (front == rear)
+		{
 			front++;
 			rear++;
 		}
-		else{
+		else
+		{
 			front++;
 		}
 	}
 }
 
-void display(){
-	if(front==-1){
+bool isFull()
+{
+	if ((rear == size - 1 && front == 0) || (front == rear + 1))
+	{
+		printf("Queue is Full\n");
+	}
+	else
+	{
+		printf("Queue is not full\n");
+	}
+}
+
+bool isEmpty()
+{
+	if (front == -1 || front == rear + 1)
+	{
+		printf("\nEmpty Queue\n");
+	}
+	else
+	{
+		printf("\nQueue is not empty\n");
+	}
+}
+
+void display()
+{
+	if (front == -1)
+	{
 		printf("Queue Underflow");
 	}
-	else{
+	else
+	{
 		int temp;
-		if(rear<front){
-			temp=front;
-			while(temp<size){
-				printf("%d ",queue[temp++]);
+		if (rear < front)
+		{
+			temp = front;
+			while (temp < size)
+			{
+				printf("%d ", queue[temp++]);
 			}
-			temp=0;
-			while(temp<=rear){
-				printf("%d ",queue[temp++]);
+			temp = 0;
+			while (temp <= rear)
+			{
+				printf("%d ", queue[temp++]);
 			}
 			printf("\n");
 		}
-		else if(rear==front){
-			printf("%d ",queue[front]);
+		else if (rear == front)
+		{
+			printf("%d ", queue[front]);
 		}
-		else{
-			temp=front;
-			while(temp<=rear){
+		else
+		{
+			temp = front;
+			while (temp <= rear)
+			{
 				printf("%d ", queue[temp++]);
 			}
 			printf("\n");
@@ -70,33 +116,36 @@ void display(){
 	}
 }
 
-int main(){
-	int choice,element;
-	while(1){
+int main()
+{
+	int choice, element;
+	while (1)
+	{
 		printf("1.Insert\n2.Delete\n3.Check if Full\n4.Check if Empty\n5.Display\n6.Exit\nEnter Your Choice : ");
-		scanf("%d",&choice);
-		switch(choice){
-			case 1:
-				printf("Enter element to be inserted : ");
-				scanf("%d",&element);
-				insert(element);
-				break;
-			case 2:
-				printf("%d",delete());
-				break;
-			case 3:
-				isFull();
-				break;
-			case 4:
-				isEmpty();
-				break;
-			case 5:
-				display();
-				break;
-			case 6:
-				return 0;
-			default:
-				printf("Wrong Choice");
+		scanf("%d", &choice);
+		switch (choice)
+		{
+		case 1:
+			printf("Enter element to be inserted : ");
+			scanf("%d", &element);
+			insert(element);
+			break;
+		case 2:
+			printf("%d", delete ());
+			break;
+		case 3:
+			isFull();
+			break;
+		case 4:
+			isEmpty();
+			break;
+		case 5:
+			display();
+			break;
+		case 6:
+			return 0;
+		default:
+			printf("Wrong Choice");
 		}
 	}
 }
