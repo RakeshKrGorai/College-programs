@@ -28,20 +28,23 @@ int operator(char op)
 // Pop Function
 char pop()
 {
+	int x;
 	if (top1 == -1)
 	{
 		return -1;
 	}
 	else
 	{
-		return stack[top1--];
+		x = stack[top1];
+		top1--;
+		return x;
 	}
 }
 
 // Push
 void push(char ch)
 {
-	if (operator(ch) != -1)
+	if (operator(ch) == -1)
 	{
 		if (top1 == size - 1)
 		{
@@ -49,23 +52,24 @@ void push(char ch)
 		}
 		else
 		{
-			while (operator(ch) <= operator(stack[top1]))
+			if (top2 == size - 1)
 			{
-				postfix[++top2] = pop();
+				printf("Full");
 			}
-			stack[++top1] = ch;
+			else
+			{
+				postfix[++top2] = ch;
+			}
 		}
 	}
 	else
 	{
-		if (top2 == size - 1)
+		while (operator(ch) <= operator(stack[top1]))
 		{
-			printf("Full");
+			postfix[++top2] = pop();
 		}
-		else
-		{
-			postfix[++top2] = ch;
-		}
+
+		stack[++top1] = ch;
 	}
 }
 
@@ -83,6 +87,7 @@ int main()
 			{
 				postfix[++top2] = pop();
 			}
+			pop();
 		}
 		else
 		{
