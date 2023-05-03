@@ -1,9 +1,6 @@
-// Convert infix to postfix using stack.((A-(B+C))*D)^(E/F)
-// What is to be fixed ? Well, i need to use push function just for operators,that is for only stack array, pushing values into postfix array should be
-// done in main function only
+// Convert infix to postfix using stack.
 
 #include <stdio.h>
-
 #define size 100
 int top1 = -1;
 char stack[size], postfix[size];
