@@ -1,4 +1,7 @@
 //Convert infix to postfix using stack.((A-(B+C))*D)^(E/F)
+//What is to be fixed ? Well, i need to use push function just for operators,that is for only stack array, pushing values into postfix array should be 
+//done in main function only
+
 #include<stdio.h>
 
 #define size 100
@@ -21,7 +24,7 @@ int precedence(char ch){
 int checker(char ch){
 	while(precedence(ch)<=precedence(stack[top1])){
 		int x=pop();
-		push(x,postfix,top2);
+	done	push(x,postfix,top2);
 	}
 	push(ch,stack,top1);
 }
