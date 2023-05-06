@@ -1,5 +1,5 @@
 #include<stdio.h>
-//#include<math.h>
+#include<math.h>
 #define size 100
 int stack[size];
 int top=-1;
@@ -33,11 +33,9 @@ int isAlpha(int ch){
 int main(){
 	char str[size];
 	int i,no1,no2, res;
-	//printf("");
 	scanf("%s",str);
 	for(i=0;str[i]!='\0';i++){
 		char ch = str[i];
-		//if(str[i]>=48 && str[i]<=57){
 		if(isdigit(ch)){
 			push(ch - '0');
 		}
@@ -61,7 +59,7 @@ int main(){
 					res = no2/no1;
 					break;
 				case '^':
-					//res = pow(no2,no1);
+					res = pow(no2,no1);
 					break;
 			}
 			push(res);
