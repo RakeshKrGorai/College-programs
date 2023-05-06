@@ -36,7 +36,7 @@ int main(){
 	scanf("%s",str);
 	for(i=0;str[i]!='\0';i++){
 		char ch = str[i];
-		if(isdigit(ch)){
+		if(isDigit(ch)){
 			push(ch - '0');
 		}
 		else if(isAlpha(ch)){
