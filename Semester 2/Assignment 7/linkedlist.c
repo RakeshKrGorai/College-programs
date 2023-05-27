@@ -31,11 +31,33 @@ void create(){
 }
 
 void traverse(){
-	printf("Not completed yet");
+	if(start==NULL){
+		printf("List is empty (:|)");
+	}
+	else{
+		temp=start;
+		while(temp!=NULL){
+			printf("%d ", temp->info);
+			temp=temp->next;
+		}
+		printf("\n");
+	}
 }
 
 void insert_begin(){
-	printf("Not completed yet");
+	int value;
+	temp=(node *)malloc(sizeof(node));
+	printf("Enter a value to insert : ");
+	scanf("%d", &value);
+	temp->info=value;
+	temp->next=NULL;
+	if(start==NULL){
+		start=temp;
+	}
+	else{
+		temp->next=start;
+		start=temp;
+	}
 }
 
 void insert_end(){
@@ -105,9 +127,13 @@ int main(){
 				delete_after();
 				break;
 			case 11:
+				free(start);
+				free(temp);
+				free(previous);
 				return 0;
 			default:
 				printf("Wrong Choice");
+				break;
 		}
 	}
 }
