@@ -3,7 +3,7 @@
 
 typedef struct node{
 	int info;
-	node *next;
+	struct node *next;
 }node;
 
 node *start=NULL, *temp, *previous;
@@ -11,12 +11,27 @@ node *start=NULL, *temp, *previous;
 void create(){
 	if(start==NULL){
 		start=(node *)malloc(sizeof(node));
-		printf("");
-		scanf();
+		printf("Enter an element : ");
+		scanf("%d", &start->info);
 	}
 	else{
+		previous=start;
+		while(previous->next!=NULL){
+			previous=previous->next;
+		}
+		temp= (node *)malloc(sizeof(node));
+		printf("Enter an element");
+		scanf("%d",&temp->info);
+		temp->next=NULL;
+		previous->next=temp;
 
+		//Print
+		printf("%d", previous->next);
 	}
+}
+
+void traverse(){
+	printf("Not completed yet");
 }
 
 void insert_begin(){
@@ -28,27 +43,27 @@ void insert_end(){
 }
 
 void insert_specific(){
-	printf();
+	printf(" ");
 }
 
 void insert_after(){
-	printf();
+	printf(" ");
 }
 
 void delete_begin(){
-	printf();
+	printf(" ");
 }
 
 void delete_end(){
-	printf();
+	printf(" ");
 }
 
 void delete_specific(){
-	printf();
+	printf(" ");
 }
 
 void delete_after(){
-	printf();
+	printf(" ");
 }
 
 int main(){
