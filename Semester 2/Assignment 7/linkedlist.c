@@ -6,7 +6,7 @@ typedef struct node{
 	struct node *next;
 }node;
 
-node *start=NULL, *temp, *previous;
+node *start=NULL, *temp, *previous, *newnode;
 
 void create(){
 	if(start==NULL){
@@ -61,7 +61,22 @@ void insert_begin(){
 }
 
 void insert_end(){
-	printf("Not completed yet");
+	int value;
+	temp=(node *)malloc(sizeof(node));
+	printf("Enter value : ");
+	scanf("%d", &value);
+	newnode->info=value;
+	newnode->next=NULL;
+	if(start==NULL){
+		start=newnode;
+	}
+	else{
+		temp=start;
+		while(temp->next!=NULL){
+			temp=temp->next;
+		}
+		temp->next=newnode;
+	}
 }
 
 void insert_specific(){
@@ -91,8 +106,8 @@ void delete_after(){
 int main(){
 	int choice;
 	while(1){
-		printf("1. Create LL\n2. Traverse LL\n3. Insert at beginning\n4.Insert at end\n5.Insert at specific position\n");
-		printf("6. Insert after a specific node\n7. Delete from beginning\n8. Delete from end\n9. Delete from specific position\n10. Delete after specific node\n11.Exit\n");
+		printf("1. Create LL\n2. Traverse LL\n3. Insert at beginning\n4. Insert at end\n5. Insert at specific position\n");
+		printf("6. Insert after a specific node\n7. Delete from beginning\n8. Delete from end\n9. Delete from specific position\n10. Delete after specific node\n11. Exit\n");
 		printf("Enter your choice : ");
 		scanf("%d", &choice);
 		switch(choice){
@@ -130,6 +145,7 @@ int main(){
 				free(start);
 				free(temp);
 				free(previous);
+				free(newnode);
 				return 0;
 			default:
 				printf("Wrong Choice");
