@@ -62,7 +62,7 @@ void insert_begin(){
 
 void insert_end(){
 	int value;
-	temp=(node *)malloc(sizeof(node));
+	newnode=(node *)malloc(sizeof(node));
 	printf("Enter value : ");
 	scanf("%d", &value);
 	newnode->info=value;
