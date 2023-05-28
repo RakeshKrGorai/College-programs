@@ -88,11 +88,22 @@ void insert_after(){
 }
 
 void delete_begin(){
-	printf(" ");
+	if(start==NULL){
+		printf("Empty List");
+	}
+	else{
+		temp=start;
+		start=start->next;
+		free(temp);
+	}
 }
 
 void delete_end(){
-	printf(" ");
+	if(start==NULL){
+		printf("Empty!");
+	}
+	else{
+	}
 }
 
 void delete_specific(){
