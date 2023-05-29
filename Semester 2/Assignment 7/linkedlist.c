@@ -103,7 +103,13 @@ void delete_end(){
 		printf("Empty!");
 	}
 	else{
-	}
+                temp = start;
+                while((temp->next)->next!=NULL){
+                        temp=temp->next;
+                }
+                temp->next=NULL;
+        }
+
 }
 
 void delete_specific(){
