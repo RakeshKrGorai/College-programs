@@ -80,7 +80,25 @@ void insert_end(){
 }
 
 void insert_specific(){
-	printf(" ");
+	int value, position, cnt=1;
+        newnode=(node *)malloc(sizeof(node));
+        printf("Enter value : ");
+        scanf("%d", &value);
+        newnode->info=value;
+        printf("Enter position for insertion : ");
+        scanf("%d", &position);
+        if(start==NULL){
+                printf("No such position exists\n");
+        }
+        else{
+                temp=start;
+                 struct node *next;
+                 while(cnt!=position){
+                        cnt++;
+                        temp=temp->next;
+                }
+
+
 }
 
 void insert_after(){
