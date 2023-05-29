@@ -107,6 +107,7 @@ void delete_end(){
                 while((temp->next)->next!=NULL){
                         temp=temp->next;
                 }
+		free((temp->next)->next);
                 temp->next=NULL;
         }
 
