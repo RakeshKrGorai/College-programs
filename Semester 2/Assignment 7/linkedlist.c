@@ -196,7 +196,27 @@ void delete_specific(){
 }
 
 void delete_after(){
-	printf(" ");
+	int element;
+	if(start==NULL){
+		printf("Nothing to delete here :)");
+	}
+	else{
+		printf("Enter element after which a number is to be deleted : ");
+		scanf("%d", &element);
+		temp=start;
+		while(temp!=NULL && temp->info!=element){
+			previous=temp;
+			temp=temp->next;
+		}
+		if(temp==NULL){
+			printf("Ayo, that element is not present, retry");
+		}
+		else{
+			previous=temp->next;
+			temp->next=previous->next;
+			free(previous);
+		}
+	}
 }
 
 int main(){
@@ -238,8 +258,6 @@ int main(){
 				delete_after();
 				break;
 			case 11:
-				free(previous);
-				free(newnode);
 				return 0;
 			default:
 				printf("Wrong Choice");
