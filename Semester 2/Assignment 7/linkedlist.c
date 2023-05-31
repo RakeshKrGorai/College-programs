@@ -164,7 +164,35 @@ void delete_end(){
 }
 
 void delete_specific(){
-	printf(" ");
+	int position,cnt=1;
+	if(start==NULL){
+		printf("Nothing to delete here :/");
+	}
+	else{
+		printf("Enter position to delete : ");
+		scanf("%d", &position);
+		temp=start;
+		if(position==1){
+			start=start->next;
+			free(temp);
+
+		}
+		else{
+			while(temp->next!=NULL && cnt!=position){
+				previous=temp;
+				temp=temp->next;
+				cnt++;
+			}
+			if(temp==NULL && cnt!=position){
+				printf("Oops, Not enough elements to traverse through...retry");
+			}
+			else{
+				previous->next=temp->next;
+				free(temp);
+			}
+		}
+	}
+
 }
 
 void delete_after(){
@@ -210,8 +238,6 @@ int main(){
 				delete_after();
 				break;
 			case 11:
-				free(start);
-				free(temp);
 				free(previous);
 				free(newnode);
 				return 0;
