@@ -63,7 +63,6 @@ void insert_begin(){
 		temp=start;
 		newnode->next=temp;
 		start=newnode;
-		temp->previous=newnode;
 		newnode->previous=NULL;
 
 	}
