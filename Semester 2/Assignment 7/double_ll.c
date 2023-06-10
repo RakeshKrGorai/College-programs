@@ -94,6 +94,7 @@ void insert_specific(){
 	scanf("%d", &newnode->info);
 	newnode->previous=NULL;
 	newnode->next=NULL;
+	temp=start;
 	int position,cnt=1;
 	printf("Enter position for insertion : ");
 	scanf("%d", &position);
@@ -106,9 +107,9 @@ void insert_specific(){
 		printf("Not enough elements\n");
 	}
 	else if(position==1){
-		temp=start;
 		newnode->next=start;
 		newnode->previous=NULL;
+		temp->previous=newnode;
 		start=newnode;
 	}
 	else{
