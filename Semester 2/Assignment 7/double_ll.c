@@ -119,7 +119,34 @@ void insert_specific(){
 	}
 }
 		
+void insert_after(){
+	newnode=(node *)malloc(sizeof(node));
+	printf("Enter element for insertion : ");
+	scanf("%d", &newnode->info);
+	newnode->previous=NULL;
+	newnode->next=NULL;
+	int element;
+	printf("Enter the element after which this node is to be inserted : ");
+	scanf("%d", &element);
+	temp=start;
+	while(temp->next!=NULL && temp->info!=element){
+		ptr=temp;
+		temp=temp->next;
+	}
+	if(temp==NULL){
+		printf("Element not found");
+	}
+	else if(temp==NULL && (ptr->next)->info==element){
+		newnode->previous=temp;
+		temp->next=newnode;
+	}
+	else{
 
+		temp->next=newnode;
+		newnode->previous=temp;
+		newnode->next=temp->next;
+	}
+}
 int main(){
 	int choice;
 	while(1){
@@ -143,9 +170,9 @@ int main(){
 			case 5:
 				insert_specific();
 				break;
-			/*case 6:
+			case 6:
 				insert_after();
-				break;*/
+				break;
 			case 7:
 				return 0;
 			default:
