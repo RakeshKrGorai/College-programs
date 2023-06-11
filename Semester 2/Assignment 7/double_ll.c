@@ -163,7 +163,18 @@ void delete_begin(){
 }
 
 void delete_end(){
-	
+	if(start==NULL){
+		printf("Empty list");
+	}
+	else{
+		temp=start;
+		while(temp->next!=NULL){
+			ptr=temp;
+			temp=temp->next;
+		}
+		ptr->next=NULL;
+		free(temp);
+	}
 }
 
 void delete_specific(){
