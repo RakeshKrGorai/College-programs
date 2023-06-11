@@ -135,15 +135,18 @@ void insert_after(){
 	if(temp==NULL){
 		printf("Element not found");
 	}
-	else if(temp==NULL && (ptr->next)->info==element){
-		newnode->previous=temp;
-		temp->next=newnode;
-	}
 	else{
-
-		temp->next=newnode;
-		newnode->previous=temp;
-		newnode->next=temp->next;
+	    if(temp->next==NULL){
+	        temp->next=newnode;
+	        newnode->previous=temp;
+	    }
+	    else{
+	        ptr=temp->next;
+	        newnode->next=temp->next;
+	        newnode->previous=temp;
+	        temp->next=newnode;
+	        ptr->previous=newnode;
+	    }
 	}
 }
 int main(){

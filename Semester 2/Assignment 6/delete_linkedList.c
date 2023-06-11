@@ -41,8 +41,7 @@ void traverse(){
 	}
 }
 
-void delete_begin(){        free(temp);
-
+void delete_begin(){        
 	if(start==NULL){
 		printf("Empty List");
 	}
