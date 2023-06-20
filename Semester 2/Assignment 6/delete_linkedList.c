@@ -7,7 +7,7 @@ typedef struct node
 	struct node *next;
 } node;
 
-node *start = NULL, *temp, *previous, *newnode;
+node *start = NULL, *temp, *previous, *newnode, *ptr;
 
 void create()
 {
@@ -101,7 +101,7 @@ void delete_specific()
 		}
 		else
 		{
-			while (temp->next != NULL && cnt != position)
+			while (temp != NULL && cnt != position)
 			{
 				previous = temp;
 				temp = temp->next;
@@ -120,32 +120,57 @@ void delete_specific()
 	}
 }
 
-void delete_after()
-{
-	int element;
-	if (start == NULL)
-	{
-		printf("Nothing to delete here :)");
+// void delete_after()
+// {
+// 	int element;
+// 	if (start == NULL)
+// 	{
+// 		printf("Nothing to delete here :)");
+// 	}
+// 	else
+// 	{
+// 		printf("Enter element after which a number is to be deleted : ");
+// 		scanf("%d", &element);
+// 		temp = start;
+// 		while (temp != NULL && temp->info != element)
+// 		{
+// 			previous = temp;
+// 			temp = temp->next;
+// 		}
+// 		if (temp == NULL)
+// 		{
+// 			printf("Ayo, that element is not present, retry");
+// 		}
+// 		else
+// 		{
+// 			previous = temp->next;
+// 			temp->next = previous->next;
+// 			free(previous);
+// 		}
+// 	}
+// }
+
+//Akanksha's Code
+void delete_after(){
+	int value;
+	if(start==NULL){
+		printf("No elements");
 	}
-	else
-	{
-		printf("Enter element after which a number is to be deleted : ");
-		scanf("%d", &element);
-		temp = start;
-		while (temp != NULL && temp->info != element)
-		{
-			previous = temp;
-			temp = temp->next;
+	else{
+		printf("Enter  after which node is to be deleted : ");
+		scanf("%d", &value);
+		temp=start;
+		while(temp!=NULL && temp->info!=value){
+			temp=temp->next;
 		}
-		if (temp == NULL)
-		{
-			printf("Ayo, that element is not present, retry");
+		if(temp==NULL){
+			printf("Node is not present");
 		}
-		else
-		{
-			previous = temp->next;
-			temp->next = previous->next;
-			free(previous);
+		else{
+			ptr=temp->next;
+			temp->next=ptr->next;
+			printf("Deleted value : ", ptr->info);
+			free(ptr);
 		}
 	}
 }
