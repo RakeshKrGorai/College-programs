@@ -51,7 +51,7 @@ void pop(){
 int main(){
 	int choice, value;
 	while(1){
-		printf("1. Insert an element\n2. Traverse\n3. Reverse\n4. Exit\nEnter a choice : ");
+		printf("1. Insert an element\n2. Traverse\n3. Pop\n4. Exit\nEnter a choice : ");
 		scanf("%d", &choice);
 		switch(choice){
 			case 1:
@@ -61,7 +61,7 @@ int main(){
 				traverse();
 				break;
 			case 3:
-                stack();
+                pop();
 				break;
 			case 4:
 				return 0;
