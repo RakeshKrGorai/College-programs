@@ -73,9 +73,9 @@ void insert_begin()
 	else
 	{
 		temp = start;
-		newnode->next = temp;
+		newnode->next = start;
+		temp->previous = newnode;
 		start = newnode;
-		newnode->previous = NULL;
 	}
 }
 
@@ -84,6 +84,8 @@ void insert_end()
 	newnode = (node *)malloc(sizeof(node));
 	printf("Enter element for insertion : ");
 	scanf("%d", &newnode->info);
+	newnode->next = NULL;
+	newnode->previous = NULL;
 	if (start == NULL)
 	{
 		start = newnode;
@@ -103,48 +105,46 @@ void insert_end()
 
 void insert_specific()
 {
+	int cnt = 1, position;
 	newnode = (node *)malloc(sizeof(node));
 	printf("Enter element for insertion : ");
 	scanf("%d", &newnode->info);
 	newnode->previous = NULL;
-	newnod->next = NULL;
-	te = ptr;
-	                                }
-= start;
-	printf("Enter details of employee1 :\n");
-	scanf(" %[^\n]",e1.name);
-	scanf(" %[^\n]",e1.id);
-	scanf("%d",e1.number);
-	scanf(" %[^\n]",e1.PAN);
-	printf("EMPLOYEE NAME : %s\n",e1.name);
-	printf("EMPLOYEE ID : %s\n",e1.id);
-	printf("EMPLOYEE NUMBER : %d\n",e1.number);
-	printf("EMPLOYEE PAN : %s\n",e1.);
-	int position, cnt = 1;
-	printf("Enter position for insertion : ");
-	scanf("%d", &position);
-	while (temp->next != NULL && cnt != position)
+	newnode->next = NULL;
+	if (start == NULL)
 	{
-		ptr = temp;
-		temp = temp->next;
-		cnt++;
-	}
-	if (temp == NULL)
-	{
-		printf("Not enough elements\n");
-	}
-	else if (position == 1)
-	{
-		newnode->next = start;
-		newnode->previous = NULL;
-		temp->previous = newnode;
+		printf("No nodes, using this node as first");
 		start = newnode;
 	}
 	else
 	{
-		newnode->next = temp->next;
-		newnode->previous = temp;
-		temp->next = newnode;
+		temp = start;
+		printf("Enter position to enter : ");
+		scanf("%d", &position);
+		while (temp != NULL && cnt != position)
+		{
+			ptr = temp;
+			temp = temp->next;
+			cnt++;
+		}
+		if (temp == NULL)
+		{
+			printf("Not enough elements\n");
+		}
+		else if (position == 1)
+		{
+			newnode->next = start;
+			newnode->previous = NULL;
+			temp->previous = newnode;
+			start = newnode;
+		}
+		else
+		{
+			newnode->next = ptr->next;
+			newnode->previous = ptr;
+			temp->previous = newnode;
+			ptr->next = newnode;
+		}
 	}
 }
 
@@ -267,29 +267,36 @@ void delete_specific()
 
 void delete_after()
 {
-	temp=start;
-	if(start==NULL){
+	temp = start;
+	if (start == NULL)
+	{
 		printf("No element in the list");
 	}
-	else{
+	else
+	{
 		int element;
 		printf("Enter element after which value is to be deleted : ");
-		scanf("%d",&element );
-		while(temp!=NULL && temp->info!=element){
-			temp=temp->next;
+		scanf("%d", &element);
+		while (temp != NULL && temp->info != element)
+		{
+			temp = temp->next;
 		}
-		if(temp->next==NULL && temp->info!=element){
+		if (temp->next == NULL && temp->info != element)
+		{
 			printf("No such element found in the list");
 		}
-		else{
-			if(temp->next==NULL && temp->info==element){
+		else
+		{
+			if (temp->next == NULL && temp->info == element)
+			{
 				printf("No element after this node");
 			}
-			else{
-				ptr=temp->next;
-				node *ptr1=ptr->next;
-				temp->next=ptr1;
-				ptr->previous=temp;
+			else
+			{
+				ptr = temp->next;
+				node *ptr1 = ptr->next;
+				temp->next = ptr1;
+				ptr->previous = temp;
 				free(ptr);
 			}
 		}
