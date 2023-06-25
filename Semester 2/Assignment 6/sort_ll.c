@@ -56,10 +56,6 @@ void sort(){
 	}
 	printf("%d\n ", temp->info);
 	printf("%d\n", temp2->info);
-	//Switch the last 2 unsorted nodes
-	switcher=temp->info;
-	temp->info=temp2->info;
-	temp2->info=switcher;
 	printf("Sorted\n");
 }
 
