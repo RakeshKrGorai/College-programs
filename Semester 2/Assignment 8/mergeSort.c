@@ -1,50 +1,59 @@
+//WAP to implement merge sort
 #include<stdio.h>
 
+void printArray(int arr[], int len);
 void mergeSort(int arr[], int low, int high);
 void merge(int arr[], int low, int mid, int high);
-void printArray(int arr[],int len);
 
 int main(){
-	int i, size, arr[100];
-	printf("Enter size of array : ");
-	scanf("%d", &size);
-	printf("Enter %d elements : ", size);
-	for(i=0;i<size;i++){
+	int len, arr[100],i;
+	printf("Enter length of array : ");
+	scanf("%d", &len);
+	printf("Enter %d elements for array : ", len);
+	for(i=0;i<len;i++){
 		scanf("%d", &arr[i]);
 	}
-	printf("Before Sorting : ");
-	printArray(arr,size);
-	mergeSort(arr,0,size-1);
+	printf("Before sorting : ");
+	printArray(arr,len);
+	mergeSort(arr,0,len-1);
 	printf("After sorting : ");
-	printArray(arr,size);
+	printArray(arr,len);
+}
+
+void printArray(int arr[], int len){
+	int i;
+	for(i=0;i<len;i++){
+		printf("%d ", arr[i]);
+	}
+	printf("\n");
 }
 
 void mergeSort(int arr[], int low, int high){
 	int mid;
 	if(low<high){
-		mid=(high+low)/2;
+		mid=(low+high)/2;
 		mergeSort(arr,low,mid);
 		mergeSort(arr,mid+1,high);
 		merge(arr,low,mid,high);
 	}
 }
 
-
 void merge(int arr[], int low, int mid, int high){
-	int temp[100], i,j,k;
+	int i,j,k;
+	int temp[30];
 	i=low;
 	j=mid+1;
-	k=0;
+	k=low;
 	while(i<=mid && j<=high){
-		if(arr[i]>=arr[j]){
-			temp[k]=arr[j];
-			k++;
-			j++;
-		}
-		else{
+		if(arr[i]<=arr[j]){
 			temp[k]=arr[i];
 			k++;
 			i++;
+		}
+		else{
+			temp[k]=arr[j];
+			k++;
+			j++;
 		}
 	}
 	while(i<=mid){
@@ -57,16 +66,7 @@ void merge(int arr[], int low, int mid, int high){
 		k++;
 		j++;
 	}
-	//Copy elements in order from temp to original array
 	for(i=low;i<=high;i++){
 		arr[i]=temp[i];
 	}
-}
-
-void printArray(int arr[], int len){
-	int i;
-	for(i=0;i<len;i++){
-		printf("%d ", arr[i]);
-	}
-	printf("\n");
 }
