@@ -17,20 +17,24 @@ void printInorder(node* node);
 
 int main(){
 	node *root=NULL;
-	int choice;
+	int choice,len,i;
 	while(1){
 		printf("1. Create BST\n2. Insert a node\n3. Traverse\n4. Search\n5. Find maximum node\n6. Find minimum node\n7. Delete node\n8. Exit\n");
 		printf("Enter your choice : ");
 		scanf("%d", &choice);
 		switch(choice){
 			case 1:
-				//root=create(root);
+				printf("Enter no of elements : ");
+				scanf("%d",&len);
+				for(i=0;i<len;i++){
+					root=insert_node(root);
+				}
 				break;
 			case 2:
 				root = insert_node(root);
 				break;
 			case 3:
-				// traverse(root);
+				printf("Inorder Traversal: ");
 				printInorder(root);
 				printf("\n");
 				
@@ -55,19 +59,6 @@ int main(){
 	}
 }
 
-/*node *create(node *root){
-	if(root!=NULL){
-		printf("Binary Search is already created, you can try inserting new nodes\n");
-	}
-	else{
-		int len;
-		printf("Enter no of elements to be inserted : ");
-		scanf("%d",&len);
-		insert(root,len);
-	}
-	return root;
-}*/
-
 
 node *insert_node(node *root){
 	node *newnode;
@@ -90,7 +81,8 @@ node *insert_node(node *root){
 				temp=temp->right;
 			}
 			else{
-				printf("Duplicate");
+				printf("Duplicate\n");
+				break;
 			}
 		}
 		if(temp==NULL){
@@ -105,27 +97,11 @@ node *insert_node(node *root){
 	return root;
 }
 
-void traverse(node *root){
-	if(root == NULL){
-		printf("Empty\n");
-	}
-	temp=root;
-	traverse(temp->left);
-	printf("%d ", temp->info);
-	traverse(temp->right);
-}
-
-void printInorder(node* node)
+void printInorder(node* root)
 {
-    if (node == NULL)
+    if (root == NULL)
         return;
- 
-    // First recur on left child
-    printInorder(node->left);
- 
-    // Then print the data of node
-    printf("%d ", node->info);
- 
-    // Now recur on right child
-    printInorder(node->right);
+    printInorder(root->left);
+    printf("%d ", root->info);
+    printInorder(root->right);
 }
