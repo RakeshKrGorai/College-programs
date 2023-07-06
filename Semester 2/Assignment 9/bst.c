@@ -14,6 +14,11 @@ node *create(node *root);
 void traverse(node *root);
 node *insert_node(node *root);
 void printInorder(node* node);
+void printPreorder(node* node);
+void printPostorder(node* node);
+void search(node *root);
+void min(node *root);
+void max(node *root);
 
 int main(){
 	node *root=NULL;
@@ -37,16 +42,21 @@ int main(){
 				printf("Inorder Traversal: ");
 				printInorder(root);
 				printf("\n");
-				
+				printf("Preorder Traversal: ");
+				printPreorder(root);
+				printf("\n");
+				printf("Postorder Traversal: ");
+				printPostorder(root);
+				printf("\n");
 				break;
 			case 4:
-				//search();
+				search(root);
 				break;
 			case 5:
-				//max();
+				max(root);
 				break;
 			case 6:
-				//min();
+				min(root);
 				break;
 			case 7:
 				//delete();
@@ -104,4 +114,71 @@ void printInorder(node* root)
     printInorder(root->left);
     printf("%d ", root->info);
     printInorder(root->right);
+}
+
+void printPreorder(node *root){
+	if(root==NULL)
+		return;
+	printf("%d ", root->info);
+	printPreorder(root->left);
+	printPreorder(root->right);
+}
+
+void printPostorder(node *root){
+	if(root==NULL){
+		return;
+	}
+	printPostorder(root->left);
+	printPostorder(root->right);
+	printf("%d ", root->info);
+}
+
+void search(node *root){
+	int element, cnt =0;
+	if(root==NULL){
+		printf("Empty list\n");
+	}
+	else{
+		printf("Enter element to be searched : ");
+		scanf("%d", &element);
+		temp=root;
+		while(temp!=NULL){
+			if(temp->info>element){
+				temp=temp->left;
+			}
+			else if(temp->info<element){
+				temp=temp->right;
+			}
+			else if(temp->info==element){
+				printf("Element found\n");
+				cnt++;
+				break;
+			}
+		}
+		if(cnt==0){
+			printf("Element not found\n");
+		}
+	}
+}
+
+void min(node *root){
+	temp=root;
+	while(temp->left!=NULL){
+		temp=temp->left;
+	}
+	printf("Minimum element : %d\n", temp->info);
+}
+
+void max(node *root){
+	temp=root;
+	while(temp->right!=NULL){
+		temp=temp->right;
+	}
+	printf("Maximum element : %d\n", temp->info);
+}
+
+void delete(node *root){
+	if(root==NULL){
+		printf("Empty list");
+	}
 }
