@@ -17,8 +17,12 @@ void printInorder(node* node);
 void printPreorder(node* node);
 void printPostorder(node* node);
 void search(node *root);
-void min(node *root);
+node * min(node *root);
 void max(node *root);
+node *delete(node *root, int key);
+//void zero_node(node *root, node *temp, node *ptr);
+//void one_node(node *root, node *temp, node *ptr);
+//void two_node(node *root, node *temp, node *ptr);
 
 int main(){
 	node *root=NULL;
@@ -59,7 +63,10 @@ int main(){
 				min(root);
 				break;
 			case 7:
-				//delete();
+				int key;
+				printf("Enter value to delete : ");
+				scanf("%d", &key);
+				delete(root,key);
 				break;
 			case 8:
 				return 0;
@@ -161,12 +168,13 @@ void search(node *root){
 	}
 }
 
-void min(node *root){
+node *min(node *root){
 	temp=root;
 	while(temp->left!=NULL){
 		temp=temp->left;
 	}
 	printf("Minimum element : %d\n", temp->info);
+	return temp;
 }
 
 void max(node *root){
@@ -177,8 +185,123 @@ void max(node *root){
 	printf("Maximum element : %d\n", temp->info);
 }
 
-void delete(node *root){
+/*void delete(node *root){
 	if(root==NULL){
 		printf("Empty list");
 	}
+	else{
+		int element;
+		temp=root;
+		ptr=NULL;
+		printf("Enter element to be searched : ");
+		scanf("%d", &element);
+		while(temp!=NULL){
+			ptr=temp;
+			if(temp->info>element){
+				temp=temp->left;
+			}
+			else if(temp->info<element){
+				temp=temp->right;
+			}
+			else if(temp->info==element){
+				if(temp->left == NULL && temp->right == NULL){
+					zero_node(root,temp,ptr);
+				}
+				else if(temp->left != NULL || temp->right != NULL){
+					one_node(root,temp,ptr);
+				}
+				else{
+					two_node(root,temp,ptr);
+				}
+			}
+		}
+	}
 }
+
+void zero_node(node *root, node *temp, node *ptr){
+	if(ptr==NULL){
+		root=NULL;
+		free(temp);
+	}
+	else if(temp==ptr->left){
+		ptr->left=NULL;
+	}
+	else{
+		ptr->right=NULL;
+	}
+	free(temp);
+}
+
+void one_node(node *root, node *temp, node *ptr){
+	node *child;
+	if(temp->left!=NULL){
+		child=temp->left;
+	}
+	else{
+		child=temp->right;
+	}
+	if(ptr==NULL){
+		root=child;
+	}
+	else if(temp==ptr->left){
+		ptr->left=child;
+	}
+	else{
+		ptr->right=child;
+	}
+	free(temp);
+}
+
+void two_node(node *root, node *temp, node *ptr){
+	node *child, *parent;
+	child=temp;
+	while(child->left!=NULL){
+		parent=child;
+		child=child->left;
+	}
+	temp->info=child->info;
+	if(child->right==NULL){
+		zero_node(root,child,parent);
+	}
+	else{
+		one_node(root,child,parent);
+	}
+}
+*/
+
+node *delete(node *tree, int key){
+	if(tree==NULL){
+		printf("Tree does not exist\n");
+	}
+	else{
+		if(key<tree->info){
+			tree->left=delete(tree->left,key);
+		}
+		else if(key>tree->info){
+			tree->right=delete(tree->right,key);
+		}
+		else if(key==tree->info){
+			if(tree->left==NULL && tree->right==NULL){
+				free(tree);
+				return NULL;
+			}
+			else if(tree->left==NULL || tree->right==NULL){
+				temp=tree;
+				if(tree->left==NULL){
+					tree=tree->right;
+				}
+				else if(tree->right==NULL){
+					tree=tree->left;
+				}
+				free(temp);
+			}
+			else if(tree->left!=NULL && tree->right!=NULL){
+				temp=min(tree->right);
+				tree->info=temp->info;
+				tree->right=delete(tree->right,tree->info);
+			}
+			return tree;
+		}
+	}
+}
+
