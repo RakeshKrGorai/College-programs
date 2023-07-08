@@ -20,9 +20,6 @@ void search(node *root);
 node * min(node *root);
 void max(node *root);
 node *delete(node *root, int key);
-//void zero_node(node *root, node *temp, node *ptr);
-//void one_node(node *root, node *temp, node *ptr);
-//void two_node(node *root, node *temp, node *ptr);
 
 int main(){
 	node *root=NULL;
