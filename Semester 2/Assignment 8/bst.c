@@ -11,7 +11,6 @@ typedef struct node
 
 node *temp, *ptr;
 
-node *create(node *root);
 void traverse(node *root);
 node *insert_node(node *root);
 void printInorder(node *root);
