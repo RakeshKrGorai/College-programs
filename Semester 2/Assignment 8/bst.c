@@ -13,9 +13,9 @@ node *temp, *ptr;
 node *create(node *root);
 void traverse(node *root);
 node *insert_node(node *root);
-void printInorder(node* node);
-void printPreorder(node* node);
-void printPostorder(node* node);
+void printInorder(node* root);
+void printPreorder(node* root);
+void printPostorder(node* root);
 void search(node *root);
 node * min(node *root);
 void max(node *root);
@@ -57,7 +57,8 @@ int main(){
 				max(root);
 				break;
 			case 6:
-				min(root);
+				ptr=min(root);
+				printf("Minimum element:%d\n", ptr->info);
 				break;
 			case 7:
 				int key;
@@ -170,7 +171,6 @@ node *min(node *root){
 	while(temp->left!=NULL){
 		temp=temp->left;
 	}
-	printf("Minimum element : %d\n", temp->info);
 	return temp;
 }
 
@@ -293,9 +293,20 @@ node *delete(node *tree, int key){
 				free(temp);
 			}
 			else if(tree->left!=NULL && tree->right!=NULL){
-				temp=min(tree->right);
-				tree->info=temp->info;
-				tree->right=delete(tree->right,tree->info);
+				node *sparent=tree;
+				node *successor=tree->right;
+				while (successor->left!=NULL){
+					sparent=successor;
+					successor=successor->left;
+				}
+				if(sparent!=tree){
+					sparent->left=successor->right;
+				}
+				else{
+					sparent->right=successor->right;
+				}
+				tree->info=successor->info;
+				free(successor);
 			}
 			return tree;
 		}
