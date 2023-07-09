@@ -182,133 +182,49 @@ void max(node *root){
 	printf("Maximum element : %d\n", temp->info);
 }
 
-/*void delete(node *root){
+node *delete(node *root, int key){
 	if(root==NULL){
-		printf("Empty list");
+		printf("root does not exist\n");
 	}
 	else{
-		int element;
-		temp=root;
-		ptr=NULL;
-		printf("Enter element to be searched : ");
-		scanf("%d", &element);
-		while(temp!=NULL){
-			ptr=temp;
-			if(temp->info>element){
-				temp=temp->left;
-			}
-			else if(temp->info<element){
-				temp=temp->right;
-			}
-			else if(temp->info==element){
-				if(temp->left == NULL && temp->right == NULL){
-					zero_node(root,temp,ptr);
-				}
-				else if(temp->left != NULL || temp->right != NULL){
-					one_node(root,temp,ptr);
-				}
-				else{
-					two_node(root,temp,ptr);
-				}
-			}
+		if(key<root->info){
+			root->left=delete(root->left,key);
 		}
-	}
-}
-
-void zero_node(node *root, node *temp, node *ptr){
-	if(ptr==NULL){
-		root=NULL;
-		free(temp);
-	}
-	else if(temp==ptr->left){
-		ptr->left=NULL;
-	}
-	else{
-		ptr->right=NULL;
-	}
-	free(temp);
-}
-
-void one_node(node *root, node *temp, node *ptr){
-	node *child;
-	if(temp->left!=NULL){
-		child=temp->left;
-	}
-	else{
-		child=temp->right;
-	}
-	if(ptr==NULL){
-		root=child;
-	}
-	else if(temp==ptr->left){
-		ptr->left=child;
-	}
-	else{
-		ptr->right=child;
-	}
-	free(temp);
-}
-
-void two_node(node *root, node *temp, node *ptr){
-	node *child, *parent;
-	child=temp;
-	while(child->left!=NULL){
-		parent=child;
-		child=child->left;
-	}
-	temp->info=child->info;
-	if(child->right==NULL){
-		zero_node(root,child,parent);
-	}
-	else{
-		one_node(root,child,parent);
-	}
-}
-*/
-
-node *delete(node *tree, int key){
-	if(tree==NULL){
-		printf("Tree does not exist\n");
-	}
-	else{
-		if(key<tree->info){
-			tree->left=delete(tree->left,key);
+		else if(key>root->info){
+			root->right=delete(root->right,key);
 		}
-		else if(key>tree->info){
-			tree->right=delete(tree->right,key);
-		}
-		else if(key==tree->info){
-			if(tree->left==NULL && tree->right==NULL){
-				free(tree);
+		else if(key==root->info){
+			if(root->left==NULL && root->right==NULL){
+				free(root);
 				return NULL;
 			}
-			else if(tree->left==NULL || tree->right==NULL){
-				temp=tree;
-				if(tree->left==NULL){
-					tree=tree->right;
+			else if(root->left==NULL || root->right==NULL){
+				temp=root;
+				if(root->left==NULL){
+					root=root->right;
 				}
-				else if(tree->right==NULL){
-					tree=tree->left;
+				else if(root->right==NULL){
+					root=root->left;
 				}
 				free(temp);
 			}
-			else if(tree->left!=NULL && tree->right!=NULL){
-				node *sparent=tree;
-				node *successor=tree->right;
+			else if(root->left!=NULL && root->right!=NULL){
+				node *sparent=root;
+				node *successor=root->right;
 				while (successor->left!=NULL){
 					sparent=successor;
 					successor=successor->left;
 				}
-				if(sparent!=tree){
+				if(sparent!=root){
 					sparent->left=successor->right;
 				}
 				else{
 					sparent->right=successor->right;
 				}
-				tree->info=successor->info;
+				root->info=successor->info;
 				free(successor);
 			}
-			return tree;
+			return root;
 		}
 	}
 }
