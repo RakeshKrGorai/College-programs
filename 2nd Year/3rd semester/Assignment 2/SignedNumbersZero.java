@@ -1,4 +1,4 @@
-//Write a program to check whether an inputted number is positive or negative.
+//Write a program to check whether an inputted number is positive or negative, or equal to zero
 
 import java.util.*;
 
