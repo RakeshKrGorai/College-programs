@@ -2,7 +2,7 @@
 
 import java.util.*;
 
-class SearchElement{
+class MaxMin{
 	public static void main(String[] args){
 		int n, element, cnt=0;
 		Scanner sc = new Scanner(System.in);
