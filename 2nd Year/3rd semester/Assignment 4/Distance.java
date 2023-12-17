@@ -22,7 +22,7 @@ class Point{
 	}
 
 	void printDistance(){
-		System.out.printf("Distance between the points : %.2d"+distance);
+		System.out.printf("Distance between the points :"+distance);
 	}
 }
 

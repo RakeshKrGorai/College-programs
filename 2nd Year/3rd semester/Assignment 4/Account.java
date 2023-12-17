@@ -74,7 +74,6 @@ class Driver{
 		System.out.print("Enter new rate : ");
 		float rate = sc.nextFloat();
 		System.out.println("Updated salary after change in rate of interest : ");
-
 		ac.changeInRate(rate);
 
 		for(int i=0;i<n;i++){
