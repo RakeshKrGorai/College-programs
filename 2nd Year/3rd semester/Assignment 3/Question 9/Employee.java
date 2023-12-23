@@ -12,7 +12,7 @@ class Employee{
 	double da, hra, grossSal, basicSal;
 
 	Employee(String empName, int empNo, double basicSal) {
-		this.empName = empName;
+	this.empName = empName;
     this.empNo = empNo;
     this.basicSal = basicSal;
     this.da = 0.2 * basicSal;
