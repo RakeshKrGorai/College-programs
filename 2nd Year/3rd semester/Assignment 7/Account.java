@@ -56,11 +56,14 @@ class Account{
 
 class AccountMain{
 	public static void main(String[] args){
+		Scanner sc = new Scanner(System.in);
+		System.out.print("Enter amount to withdraw from acc 1 :");
+		int wd = sc.nextInt();
 		Account acc1 = new Account("Rahul", 54, 1000);
 		Account acc2 = new Account("Sumit", 52, 1000);
 		Account acc3 = new Account();
 		try{
-			acc3.transfer(acc1, acc2, 200);
+			acc3.transfer(acc1, acc2, wd);
 		}
 		catch(MinimumBalanceException e){
 			System.out.println("Transfer failed, Balance cannot go below 500");
