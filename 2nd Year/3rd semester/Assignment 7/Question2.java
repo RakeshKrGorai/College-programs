@@ -14,6 +14,5 @@ class Main{
 		else{
 			System.out.println("Result : "+ x/(x-y));
 		}
-
 	}
 }

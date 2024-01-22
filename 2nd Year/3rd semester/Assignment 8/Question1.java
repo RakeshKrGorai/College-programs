@@ -29,6 +29,7 @@ class Main{
 			t.start();
 		}
 		System.out.println("Alive? :" +th.isAlive());
+		System.out.println("Id : " +th.getId());
 	}
 }
 			

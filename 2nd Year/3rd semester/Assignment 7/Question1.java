@@ -26,4 +26,4 @@ class Main{
 			System.out.println("Result : "+ num1/num2);
 		}
 	}
-}
+}/
